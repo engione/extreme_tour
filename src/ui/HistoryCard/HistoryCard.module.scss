@@ -1,0 +1,50 @@
+@import "../../variables";
+
+.card {
+  padding: 25px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  border: 1px solid #a1a1a1a4;
+  border-radius: $radius;
+  @include Shadow;
+
+  button {
+    margin-left: auto;
+  }
+}
+
+.cardInfo {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-right: 50px;
+  border-right: 2px solid #a1a1a1;
+
+  img {
+    border-radius: 20px;
+    width: 94px;
+    height: 94px;
+  }
+
+  h3 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 25px;
+    color: $firstColor;
+  }
+}
+
+.cardDate {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+
+  span {
+    font-weight: 700;
+    font-size: 25px;
+    color: $firstColor;
+  }
+}
+
+

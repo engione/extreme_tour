@@ -1,0 +1,175 @@
+@import "../../variables";
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../assets/hero_image.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+
+  &::after {
+    position: absolute;
+    content: "";
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #0000006e;
+  }
+}
+
+.authWrapper {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 490px;
+  width: 100%;
+  min-height: 400px;
+  padding: 40px 60px;
+  border-radius: $radius;
+  background-color: #fff;
+  @include Shadow;
+
+  h3 {
+    margin: 0;
+    margin-bottom: 20px;
+    color: $firstColor;
+    font-size: 32px;
+  }
+
+  form {
+    max-width: 370px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    input {
+      width: 100%;
+      height: 50px;
+      padding: 10px 24px;
+      border: 1px solid rgba(51, 51, 51, 0.4);
+      border-radius: $inputRadius;
+      outline: none;
+      font-weight: 400;
+      font-size: 18px;
+      color: #333;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 18px;
+        color: #3333337b;
+      }
+
+      &:focus-within {
+        border: 1px solid $firstColor;
+      }
+    }
+  }
+}
+
+.close {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50px;
+  right: 60px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    path {
+      transition: fill 0.3s ease;
+    }
+  }
+
+  &:hover {
+    svg > path {
+      fill: #33333352;
+    }
+  }
+}
+
+.btnWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  span {
+    font-weight: 400;
+    font-size: 16px;
+    color: #3333337b;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 16px;
+    color: #333;
+    a {
+      font-weight: 600;
+      color: $firstColor;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $secondaryColor;
+      }
+    }
+  }
+}
+
+.btn {
+  width: 100%;
+  padding: 10px 24px;
+  height: 50px;
+  border-radius: $radius;
+  border: none;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:disabled {
+    background-color: $secondaryColor;
+    cursor: not-allowed;
+  }
+}
+
+.btnAuth {
+  background-color: $firstColor;
+  color: #fff;
+
+  &:hover {
+    background-color: $secondaryColor;
+  }
+}
+
+.btnGoogle {
+  padding-left: 40px;
+  background-color: #fff;
+  border: 1px solid #3333337b;
+  background-image: url("../../assets/google.svg");
+  background-repeat: no-repeat;
+  background-position: center left 10px;
+  background-size: 24px 24px;
+  color: #3333337b;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f1f1f197;
+  }
+}

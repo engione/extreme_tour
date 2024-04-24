@@ -1,0 +1,47 @@
+@import "../../variables";
+
+.accInfo {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 15px;
+  color: $firstColor;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 45px;
+  background-color: #fff;
+  @include Shadow;
+  border-radius: $radius;
+}
+
+.infoRow {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #9d9d9d;
+}
+
+.rowLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.rowDescr {
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(17, 34, 17, 0.75);
+}
+
+.rowData {
+  font-weight: 600;
+  font-size: 20px;
+  color: #121;
+}

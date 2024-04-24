@@ -1,0 +1,27 @@
+@import "../../variables";
+.nav {
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+
+  a {
+    font-weight: 600;
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s ease;
+
+
+
+
+    @media (max-width: 1199px) {
+      font-size: 15px;
+    }
+
+
+    &:hover {
+      color: #b5b3b3;
+    }
+
+  }
+}
+

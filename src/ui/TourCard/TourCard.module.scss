@@ -1,0 +1,79 @@
+@import "../../variables";
+
+.card {
+  max-width: 270px;
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: $radius;
+  transition: box-shadow .3s ease;
+
+  &:hover {
+    box-shadow: 9px 10px 28px -3px rgba(34, 60, 80, 0.36);
+  }
+
+  img {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    height: 250px;
+    object-fit: cover;
+    // border-radius: $radius;
+  }
+}
+
+.cardInfo {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h4 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 25px;
+    color: #000;
+    transition: color .3s ease;
+
+    &:hover {
+        color: $secondaryColor;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    color: #333;
+  }
+}
+
+.price {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 0;
+  font-weight: 700;
+  font-size: 25px;
+  color: #000;
+  span {
+    font-weight: 800;
+    font-size: 25px;
+    color: $thirdColor;
+  }
+}
+
+.params {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}

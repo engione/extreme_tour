@@ -1,0 +1,77 @@
+@import "../../variables";
+
+.footer {
+  padding-top: 35px;
+  padding-bottom: 20px;
+}
+
+.footerWrapper {
+  display: flex;
+//   justify-content: space-between;
+  gap: 50px;
+  height: 400px;
+  padding: 60px 40px;
+  background-color: $firstColor;
+  border-radius: $radius;
+  background-image: url("../../assets/bg_footer.png");
+  background-repeat: no-repeat;
+  background-position: bottom right 20%;
+  background-size: 28%;
+}
+
+.footerRight {
+  max-width: 355px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  span,
+  p,
+  a {
+    margin: 0;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 190%;
+  }
+}
+
+.footerCenter {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 365px;
+    width: 100%;
+
+    span,
+    p,
+    a {
+      color: #fff;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 190%;
+    }
+}
+
+.linksWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footerLeft {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.links {
+    text-decoration: underline;
+    transition: color .3s ease;
+
+    &:hover {
+        color: #b5b3b3;
+    }
+}

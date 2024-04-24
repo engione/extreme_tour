@@ -1,0 +1,59 @@
+@import "../../variables";
+
+.advantages {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 15px;
+  color: $firstColor;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.advantagesList {
+  $gaps: 30px;
+  $count: 4;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gaps;
+
+  li {
+    width: calc((100% - ($gaps * ($count - 1))) / $count);
+    min-height: 400px;
+
+    div {
+      height: 100%;
+      padding: 20px;
+      padding-top: 120px;
+      background-color: #fff;
+      border-radius: $radius;
+      background-repeat: no-repeat;
+      background-position: center top 20px;
+      background-size: 90px 90px;
+      @include Shadow;
+
+      p {
+        margin: 0;
+        color: $firstColor;
+        font-size: 25px;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1199px) {
+    .advantagesList {
+        $count: 3;
+        $gaps: 30px;
+
+        li {
+            width: calc((100% - ($gaps * ($count - 1))) / $count); 
+        }
+    }
+}

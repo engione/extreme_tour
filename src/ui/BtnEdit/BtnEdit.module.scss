@@ -1,0 +1,19 @@
+@import "../../variables";
+.btnEdit {
+    width: 60px;
+    height: 60px;
+    background-color: $firstColor;
+    border: none;
+    border-radius: 50%;
+    transition: background-color .3s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $secondaryColor;
+    }
+
+    svg {
+        width: 35px;
+        height: 35px;
+    }
+}

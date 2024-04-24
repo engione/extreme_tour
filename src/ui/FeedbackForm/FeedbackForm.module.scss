@@ -1,0 +1,74 @@
+@import "../../variables";
+
+.feedback {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+  min-height: 460px;
+  border-radius: $radius;
+
+  form {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    border-radius: $radius;
+
+    h3 {
+      width: 500;
+      margin: 0;
+      font-weight: 700;
+      font-size: 25px;
+      text-align: center;
+      color: #fff;
+    }
+
+    input,
+    textarea {
+      max-width: 540px;
+      width: 100%;
+      padding: 20px;
+      border: 2px solid $firstColor;
+      border-radius: $radius;
+      outline: none;
+      font-weight: 400;
+      font-size: 20px;
+      color: #717171;
+      resize: none;
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 20px;
+        color: #717171;
+      }
+    }
+  }
+}
+
+.wrapperAbout {
+  background-color: #fff;
+  background-image: url("../../assets/bg_climber.png");
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: 40% 100%;
+}
+
+.wrapperMain {
+  background-image: url("../../assets/bg_diver.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.formMain {
+  padding: 20px;
+  background-color: #000000c1;
+}

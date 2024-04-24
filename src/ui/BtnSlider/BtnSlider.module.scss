@@ -1,0 +1,23 @@
+@import "../../variables";
+
+.btnWrapper {
+    display: flex;
+    gap: 40px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: $firstColor;
+    border: none;
+    cursor: pointer;
+    transition: background-color .3s ease;
+
+    &:hover {
+        background-color: $secondaryColor;
+    }
+}

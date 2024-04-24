@@ -1,0 +1,49 @@
+@import "../../variables";
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerWrapper {
+  position: absolute;
+  top: 20px;
+  z-index: 10;
+  max-width: 1240px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 58px;
+  background-color: $firstColor;
+  padding: 30px 60px;
+  border-radius: $radius;
+  @include Shadow;
+
+  @media (max-width: 1199px) {
+    column-gap: 40px;
+    img {
+      width: 130px;
+    }
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #fff;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &:hover {
+      background-color: #b3b3b3;
+      color: #fff;
+    }
+
+    @media (max-width: 1199px) {
+      font-size: 15px;
+      padding: 7px 25px;
+    }
+  }
+}
