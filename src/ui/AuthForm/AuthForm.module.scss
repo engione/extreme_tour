@@ -76,6 +76,11 @@
   }
 }
 
+.inputPassword {
+  width: 100%;
+  position: relative;
+}
+
 .close {
   width: 24px;
   height: 24px;
@@ -99,6 +104,20 @@
       fill: #33333352;
     }
   }
+}
+
+.btnPass {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 .btnWrapper {

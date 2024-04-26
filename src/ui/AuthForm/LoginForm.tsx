@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Close from "../../assets/close.svg?react";
+import BtnPass from "../../assets/btn_pass.svg?react";
 import auth from "./AuthForm.module.scss";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
@@ -24,6 +25,7 @@ export const LoginForm = ({ setToken, setAuthBtn }: any) => {
   }
 
   const [loading, setLoading] = useState<boolean>(false);
+  const [passwordShown, setPasswordShown] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -44,26 +46,13 @@ export const LoginForm = ({ setToken, setAuthBtn }: any) => {
       (() => {
         toast.success("Вы вошли в аккаунт");
       })();
-      navigate(fromPage, {replace: true});
+      navigate(fromPage, { replace: true });
     } else {
       (() => {
         toast.error(data.error.toString());
       })();
       setLoading(false);
     }
-
-    // try {
-    //   const { data, error } = await supabase.auth.signInWithPassword({
-    //     email: formData.email,
-    //     password: formData.password,
-    //   });
-    //   if (error) throw error;
-    //   setToken(data);
-    //   setAuthBtn(false);
-    //   navigate("/");
-    // } catch (error) {
-    //   alert(error);
-    // }
   }
 
   return (
@@ -84,12 +73,21 @@ export const LoginForm = ({ setToken, setAuthBtn }: any) => {
               placeholder="Почта"
               onChange={handleChange}
             />
-            <input
-              type="text"
-              name="password"
-              placeholder="Пароль"
-              onChange={handleChange}
-            />
+            <div className={auth.inputPassword}>
+              <input
+                type={passwordShown ? "text" : "password"}
+                name="password"
+                placeholder="Пароль"
+                onChange={handleChange}
+              />
+              <button
+                type="button"
+                className={auth.btnPass}
+                onClick={() => setPasswordShown(!passwordShown)}
+              >
+                <BtnPass />
+              </button>
+            </div>
             <div className={auth.btnWrapper}>
               <button
                 disabled={loading}

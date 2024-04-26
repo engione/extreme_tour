@@ -5,10 +5,12 @@ import { priceFormat } from "../../utils/priceFormat";
 import { getTours } from "../../repo/getTours";
 import dest from "./Destination.module.scss";
 import { BtnSlider } from "../BtnSlider/BtnSlider";
+import { useScroll } from "../../hooks/useScroll";
 
 export const Destination = () => {
   const [tours, setTours] = useState<any>();
-  const [currentPage, setCurrentPage] = useState(0);
+  const { listRef, canScrollLeft, canScrollRight, scrollContainerBy } =
+    useScroll(tours);
 
   useEffect(() => {
     (async () => {
@@ -17,51 +19,45 @@ export const Destination = () => {
     })();
   }, []);
 
-  const nextPage = () => {
-    setCurrentPage((prevIndex) => (prevIndex + 1) % tours.length);
-  };
-
-  const prevPage = () => {
-    setCurrentPage(
-      (prevIndex) => (prevIndex - 1 + tours.length) % tours.length
-    );
-  };
-
   return (
     <section className={dest.destination}>
       <div className="container">
         <div className={dest.destinationTop}>
           <h3 className={dest.title}>Популярные направления</h3>
-          <BtnSlider nextPage={nextPage} prevPage={prevPage} />
+          <BtnSlider
+            scrollLeft={canScrollLeft}
+            scrollRight={canScrollRight}
+            nextPage={() => scrollContainerBy(1220)}
+            prevPage={() => scrollContainerBy(-1220)}
+          />
         </div>
         <div className={dest.cardList}>
-          {tours instanceof Array
-            ? tours
-                .slice(currentPage)
-                .concat(tours.slice(0, currentPage))
-                .slice(0, 4)
-                .map((card: any) => (
-                  <TourCard
-                    key={card.id}
-                    id={card.id}
-                    name={card.name}
-                    descr={card.descr}
-                    img={card.img}
-                    price={priceFormat(card.price).toString()}
-                  />
+          <ul ref={listRef}>
+            {tours instanceof Array
+              ? tours.map((card: any) => (
+                  <li key={card.id}>
+                    <TourCard
+                      id={card.id}
+                      name={card.name}
+                      descr={card.descr}
+                      img={card.img}
+                      price={priceFormat(card.price).toString()}
+                    />
+                  </li>
                 ))
-            : Array.from({ length: 4 }, (item, index) => {
-                return (
-                  <Skeleton
-                    key={index}
-                    sx={{ bgcolor: "grey.300", borderRadius: "20px" }}
-                    variant="rectangular"
-                    width={270}
-                    height={480}
-                    animation={"wave"}
-                  />
-                );
-              })}
+              : Array.from({ length: 4 }, (item, index) => {
+                  return (
+                    <Skeleton
+                      key={index}
+                      sx={{ bgcolor: "grey.300", borderRadius: "20px" }}
+                      variant="rectangular"
+                      width={270}
+                      height={480}
+                      animation={"wave"}
+                    />
+                  );
+                })}
+          </ul>
         </div>
       </div>
     </section>

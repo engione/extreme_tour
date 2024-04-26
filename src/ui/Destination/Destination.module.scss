@@ -1,14 +1,21 @@
 @import "../../variables";
 
 .destination {
-    padding-top: 35px;
-    padding-bottom: 35px;
+  padding-top: 35px;
+  padding-bottom: 10px;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .destinationTop {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
 }
 
 .title {
@@ -19,8 +26,33 @@
 }
 
 .cardList {
-    display: flex;
-    gap: 35px;
-    justify-content: space-between;
+  width: 1215px;
+  height: 500px;
+  overflow: hidden;
 
+  ul {
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 25px;
+    display: flex;
+    box-sizing: content-box;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 35px;
+
+    li {
+      display: flex;
+      flex-shrink: 0;
+
+      &:last-child {
+        margin-right: 15px;
+      }
+
+      &:first-child {
+        margin-left: 15px;
+      }
+    }
+  }
 }
