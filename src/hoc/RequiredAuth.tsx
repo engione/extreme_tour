@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import { useSelector } from "react-redux";
 import { Navigate, useLocation } from "react-router-dom";
 
@@ -7,17 +7,12 @@ type TRequired = {
 };
 
 export const RequiredAuth = ({ children }: TRequired) => {
-//   const [auth, setAuth] = useState<boolean>();
-
   const location = useLocation();
-  const user_metadata = useSelector((state: any) => state.user_metadata);
-//   useEffect(() => {
-//     Object.keys(user_metadata).length === 0 ? setAuth(false) : setAuth(true);
-//   }, [user_metadata]);
+  const user = useSelector((state: any) => state.userData.data);
 
-  if (Object.keys(user_metadata).length === 0) {
+  if (Object.keys(user).length === 0) {
+    console.log(Object.keys(user).length);
     return <Navigate to="/login" state={{ from: location }} />;
   }
-
   return children;
 };

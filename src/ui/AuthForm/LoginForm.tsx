@@ -39,8 +39,8 @@ export const LoginForm = ({ setToken, setAuthBtn }: any) => {
       console.log(data.data);
       setToken(data.data);
       dispatch({
-        type: "ADD_USER_METADATA",
-        payload: data.data.user?.user_metadata,
+        type: "ADD_USER_DATA",
+        payload: data.data.user,
       });
       setAuthBtn(false);
       (() => {
@@ -109,7 +109,7 @@ export const LoginForm = ({ setToken, setAuthBtn }: any) => {
                 Войти с Google
               </button>
               <p>
-                Нет аккаунта? <Link to={"/signup"}>Зарегистрироваться</Link>
+                Нет аккаунта? <Link replace={true} to={"/signup"}>Зарегистрироваться</Link>
               </p>
             </div>
           </form>

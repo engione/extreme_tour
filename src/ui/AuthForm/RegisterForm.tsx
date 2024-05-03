@@ -46,8 +46,8 @@ export const RegisterForm = ({ setToken, setAuthBtn }: any) => {
       alert("Вы успешно зарегистрировались!");
       setToken(data.data);
       dispatch({
-        type: "ADD_USER_METADATA",
-        payload: data.data.user?.user_metadata,
+        type: "ADD_USER_DATA",
+        payload: data.data.user,
       });
       setAuthBtn(false);
       (() => {
@@ -121,7 +121,7 @@ export const RegisterForm = ({ setToken, setAuthBtn }: any) => {
               Зарегистрироваться с Google
             </button>
             <p>
-              Уже есть аккаунт? <Link to={"/login"}>Войти</Link>
+              Уже есть аккаунт? <Link replace={true} to={"/login"}>Войти</Link>
             </p>
           </div>
         </form>

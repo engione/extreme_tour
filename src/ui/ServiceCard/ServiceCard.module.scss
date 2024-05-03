@@ -1,0 +1,45 @@
+@import "../../variables";
+
+.card {
+  max-width: 554px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow;
+  border-radius: $radius;
+
+  &:hover {
+    box-shadow: 2px 6px 16px -2px rgba(34, 60, 80, 0.35);
+    -webkit-box-shadow: 2px 6px 16px -2px rgba(34, 60, 80, 0.35);
+    -moz-box-shadow: 2px 6px 16px -2px rgba(34, 60, 80, 0.35);
+  }
+
+  img {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    object-fit: contain;
+  }
+}
+
+.cardInfo {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h3 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 32px;
+    color: #000;
+  }
+
+  p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 24px;
+    color: #000;
+  }
+}

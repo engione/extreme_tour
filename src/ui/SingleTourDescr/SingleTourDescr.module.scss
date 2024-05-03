@@ -133,3 +133,45 @@
     }
   }
 }
+
+.dialogTitle {
+  margin: 0;
+  max-width: 350px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 100%;
+  color: #333;
+  text-align: center;
+}
+
+.dialogWrap {
+  display: flex;
+  gap: 20px;
+}
+
+.dialogBtn {
+  padding: 10px 20px;
+  width: 100px;
+  background-color: transparent;
+  border-radius: $radius;
+  border: 2px solid $firstColor;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: #333;
+  cursor: pointer;
+  transition: opacity .3s ease;
+
+  &:hover {
+    opacity: 0.4;
+  }
+}
+
+.btnDanger {
+  border-color: red;
+}
+
+.btnSuccess {
+  border-color: green;
+}

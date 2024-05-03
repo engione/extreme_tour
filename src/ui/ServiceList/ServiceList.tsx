@@ -1,28 +1,25 @@
-import { TourCard } from "../TourCard/TourCard";
-import { Skeleton } from "@mui/material";
-import { priceFormat } from "../../utils/priceFormat";
-import toursSection from "./Tours.module.scss";
+import { ServiceCard } from "../ServiceCard/ServiceCard";
+import Skeleton from "@mui/material/Skeleton/Skeleton";
+import sl from "./ServiceList.module.scss";
 
-type TTours = {
-  tours: [];
+type TServiceList = {
+  service: [];
 };
 
-export const Tours = ({ tours }: TTours) => {
+export const ServiceList = ({ service }: TServiceList) => {
   return (
-    <section className={toursSection.tours}>
+    <section className={sl.service}>
       <div className="container">
-        <h3 className={toursSection.title}>Туры</h3>
-        <div className={toursSection.cardList}>
+        <h3 className={sl.title}>Сервис</h3>
+        <div className={sl.cardList}>
           <ul>
-            {tours instanceof Array
-              ? tours?.map((card: any) => (
+            {service instanceof Array
+              ? service?.map((card: any) => (
                   <li key={card.id}>
-                    <TourCard
-                      id={card.id}
+                    <ServiceCard
                       name={card.name}
                       descr={card.descr}
                       img={card.img}
-                      price={priceFormat(card.price).toString()}
                     />
                   </li>
                 ))
@@ -32,8 +29,8 @@ export const Tours = ({ tours }: TTours) => {
                       key={index}
                       sx={{ bgcolor: "grey.300", borderRadius: "20px" }}
                       variant="rectangular"
-                      width={270}
-                      height={480}
+                      width={558}
+                      height={445}
                       animation={"wave"}
                     />
                   );

@@ -15,6 +15,7 @@
 }
 
 .cardInfo {
+  height: 94px;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -33,12 +34,6 @@
     font-size: 25px;
     color: $firstColor;
   }
-}
-
-.cardDate {
-  display: flex;
-  gap: 30px;
-  align-items: center;
 
   span {
     font-weight: 700;
@@ -47,4 +42,18 @@
   }
 }
 
+.cardDate {
+  height: 94px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding-right: 50px;
+  border-right: 2px solid #a1a1a1;
+
+  span {
+    font-weight: 700;
+    font-size: 25px;
+    color: $firstColor;
+  }
+}
 

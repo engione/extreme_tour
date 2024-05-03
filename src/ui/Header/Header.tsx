@@ -10,7 +10,7 @@ type TProps = {
 };
 
 export const Header = ({ children, auth = true }: TProps) => {
-    const user_metadata = useSelector((state: any) => state.user_metadata);
+    const user_metadata = useSelector((state: any) => state.userData.data.user_metadata);
   return (
     <header>
       <div className={header.headerWrapper}>

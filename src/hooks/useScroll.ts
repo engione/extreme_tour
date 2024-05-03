@@ -12,9 +12,8 @@ export const useScroll = (dependence?: any) => {
     if (current) {
       const { scrollLeft, scrollWidth, clientWidth } = current;
       setCanScrollLeft(scrollLeft > 0);
-      console.log(scrollLeft);
+
       setCanScrollRight(Math.floor(scrollLeft) !== scrollWidth - clientWidth);
-      console.log(scrollWidth - clientWidth);
     }
   };
 
@@ -35,5 +34,5 @@ export const useScroll = (dependence?: any) => {
     };
   }, [dependence ?? undefined]);
 
-  return {listRef, canScrollLeft, canScrollRight, scrollContainerBy}
+  return { listRef, canScrollLeft, canScrollRight, scrollContainerBy };
 };

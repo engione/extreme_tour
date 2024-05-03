@@ -8,6 +8,7 @@ import { SingleTourDetails } from "../ui/SingleTourDetails/SingleTourDetails";
 export const SingleTourPage = () => {
   const [tour, setTour] = useState<any>();
   const { tourId } = useParams();
+  
   window.scrollTo(0, 0);
 
   useEffect(() => {
@@ -22,6 +23,7 @@ export const SingleTourPage = () => {
       {tour instanceof Array ? (
         <>
           <SingleTourDescr
+            id={tour[0].id}
             img={tour[0].img}
             name={tour[0].name}
             price={tour[0].price}

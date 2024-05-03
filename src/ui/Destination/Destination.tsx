@@ -7,17 +7,14 @@ import dest from "./Destination.module.scss";
 import { BtnSlider } from "../BtnSlider/BtnSlider";
 import { useScroll } from "../../hooks/useScroll";
 
-export const Destination = () => {
-  const [tours, setTours] = useState<any>();
-  const { listRef, canScrollLeft, canScrollRight, scrollContainerBy } =
-    useScroll(tours);
+type TDestination = {
+  popTours: []
+}
 
-  useEffect(() => {
-    (async () => {
-      const data = await getTours();
-      setTours(data);
-    })();
-  }, []);
+export const Destination = ({popTours} : TDestination) => {
+
+  const { listRef, canScrollLeft, canScrollRight, scrollContainerBy } =
+    useScroll(popTours);
 
   return (
     <section className={dest.destination}>
@@ -33,8 +30,8 @@ export const Destination = () => {
         </div>
         <div className={dest.cardList}>
           <ul ref={listRef}>
-            {tours instanceof Array
-              ? tours.map((card: any) => (
+            {popTours instanceof Array
+              ? popTours.map((card: any) => (
                   <li key={card.id}>
                     <TourCard
                       id={card.id}

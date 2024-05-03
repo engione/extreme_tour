@@ -1,18 +1,37 @@
-import { Btn } from "../Btn/Btn"
-import card from "./HistoryCard.module.scss"
+import { priceFormat } from "../../utils/priceFormat";
+import { Btn } from "../Btn/Btn";
+import card from "./HistoryCard.module.scss";
+import Arrow from "../../assets/arrow_forward.svg?react";
 
-export const HistoryCard = () => {
-    return (
-        <div className={card.card}>
-            <div className={card.cardInfo}>
-                <img src="../../src/assets/tour_img.png" alt="Изображение тура" />
-                <h3>Дайвинг в сочи</h3>
-            </div>
-            <div className={card.cardDate}>
-                <span>Дата:</span>
-                <span>11-12-23</span>
-            </div>
-            <Btn>Посмотреть</Btn>
-        </div>
-    )
-}
+type THistoryCard = {
+  img: string;
+  title: string;
+  date: string;
+  price: number;
+};
+
+export const HistoryCard = ({ img, title, date, price }: THistoryCard) => {
+  return (
+    <div className={card.card}>
+      <div
+        style={{ maxWidth: "400px", width: "100%" }}
+        className={card.cardInfo}
+      >
+        <img src={img} alt="Изображение тура" />
+        <h3>{title}</h3>
+      </div>
+      <div className={card.cardInfo}>
+        <span>Дата:</span>
+        <span>{date}</span>
+      </div>
+      <div
+        style={{ borderRight: "none", paddingRight: "0" }}
+        className={card.cardInfo}
+      >
+        <span>Цена:</span>
+        <span>{priceFormat(price).toString()}&nbsp;₽</span>
+      </div>
+      <Btn><Arrow /></Btn>
+    </div>
+  );
+};
